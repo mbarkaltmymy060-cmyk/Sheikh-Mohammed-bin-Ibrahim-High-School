@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثانوية الشيخ محمد بن إبراهيم - قائمة شرف الخريجين</title>
+    <style>
+        /* تنسيقات عامة للموقع */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f4f6f9 0%, #e9edf2 100%);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* حاوية الصفحة الرئيسية */
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(26, 82, 118, 0.08);
+            text-align: center;
+            flex: 1;
+            box-sizing: border-box;
+        }
+
+        /* عنوان الصفحة الفخم */
+        h1 { 
+            color: #1a5276; 
+            font-size: 2.4rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, #27ae60, #1a5276);
+            border-radius: 2px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* شبكة عرض أسماء الخريجين المتجاوبة (للكمبيوتر والجوال) */
+        .graduates-grid {
+            display: grid;
+            /* تنقسم تلقائياً وبشكل مرن بناءً على حجم الشاشة */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            padding: 0;
+            margin: 0 auto 40px auto;
+            list-style: none;
+        }
+
+        /* تصميم بطاقة الخريج */
+        .graduate-card {
+            background: #fff;
+            padding: 18px 15px;
+            border-radius: 10px;
+            border: 1px solid #eef2f5;
+            border-top: 4px solid #1a5276;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            text-align: right;
+        }
+
+        /* تأثير التمرير بالماوس */
+        .graduate-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(26, 82, 118, 0.1);
+            border-top-color: #27ae60;
+            background-color: #fcfdfe;
+        }
+
+        .graduate-name {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+
+        .icon-cap {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* تنسيق زر العودة للرئيسية */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 35px;
+            background-color: #1a5276;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(26, 82, 118, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .back-btn:hover {
+            background-color: #2c3e50;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(44, 62, 80, 0.3);
+        }
+
+        /* التذييل أسفل الصفحة */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #2c3e50;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* شاشات الجوال والهواتف الذكية */
+        @media (max-width: 600px) {
+            .container {
+                margin: 15px auto;
+                padding: 30px 15px;
+                border-radius: 12px;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .graduates-grid {
+                grid-template-columns: 1fr; /* تصبح البطاقات فوق بعضها بالكامل على الجوال لسهولة التصفح */
+                gap: 12px;
+            }
+            .graduate-card {
+                padding: 15px;
+            }
+            .graduate-name {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎓 لوحة شرف الخريجين</h1>
+        <p class="subtitle">قائمة بأسماء طلاب ثانوية الشيخ محمد بن إبراهيم المتفوقين للعام الدراسي</p>
+        
+        <ul class="graduates-grid">
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">إبراهيم خليل على محمد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">إبراهيم عبدالعزيز بن صالح الجبالي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">إبراهيم محمد إبراهيم العديدع</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">إبراهيم بن عبدالكريم بن عبدالله الفاضل</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">إبراهيم بن محمد بن إبراهيم الحمدان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">أحمد منير احمد الغامدي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">أحمد بن أنور بن عبد الله الهزاع</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">احمد عبدالله - درويش</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">أسامة محمد على الرسيلي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">أصيل محمد على الرسيلي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">أصيل بن محسن بن محسن حسين</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">الـوليد بن طلال بن سرحي مشرقي مجرشي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">الحسن بن عبدالله بن سعد النعماني</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">المعتصم بن مشعل بن عبدالله ال زنات</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">الوليد خالد حامد العتيبي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">الوليد نايف عبدالعزيز البواردي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">انس عبدالله - ابو شاهين</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">بسام ياسين يحيى عواف</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">بدر عبدالوهاب حسين سفاري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">بندر بن يحيى بن عبدالله فقيهي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">تركي بطي بلال الربيعان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">تركي عبدالحكيم سعد الدريهم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">تركي عبدالرحمن احمد العمري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">تركي محمد عبدالله المريشد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">تركي بن سالم بن عبدالله الدوسري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">حمد بن يوسف بن عبدالله الجاسر</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">حمد فلاح حمد الفلاح</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">حسن بن محمد بن متعب موسى</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">حسن بن يحيى بن حسن هزازي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">حسين عبدالله حسين العقيلي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">حمزه حسان محمد أبوشره</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">خالد حمود بن صالح الخلف</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">خالد سعد جمال الهزاع</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">خالد سلمان زيد الهميم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">خالد شهوان - محسن</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">خالد عبدالله محمد الدباغ</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">خالد عبدالله بن علي زيد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">خالد عمر عبدالرحمن البدوي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">خالد محمد ملبس آل عماره</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">خالد يوسف احمد الفهد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">خالد بن ماجد بن محمد بن دهيش</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">خليل إبراهيم محمد أحمد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">رائد جميل عبدالرحمن برقاوي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">رائد عبدالعزيز بن راشد الزير</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">رائد محمد دحيم القحطاني</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">راكان ابراهيم حسن الطلحه</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ريان تركي يحي الزهراني</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ريان دفاع احمد الحميري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ريان عجلان بن احمد العجلان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ريان ناصر سلمان العريفي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ريان بن فهد بن عبدالله العبيد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ريان بن يوسف بن عبدالرحمن الدهيمي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">زياد ابراهيم عبدالرحمن راجحي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">زياد بن وليد بن فهد الباحوث</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">زياد بن وليد بن غريب الجساسي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">زياد عبده هادي شراحيلي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">زيد عبدالله بن محمد الصرامي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سالم احمد محمد الشعرياء</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سعود بن بدر بن سعود الدريهم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سعود بن عبدالله بن عبدالرحمن الحمد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سعود محمد عبد العزيز السعيدي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سعيد عاصم سعيد البيشي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سلطان خالد صالح الشواوي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سلطان عبدحكيم سعد الدريهم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سلطان عبدالله غائب العتيبي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سلطان محمد فهد المنيف</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سلمان ابراهيم راشد العلي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سلمان sultan يحي حكمي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سلمان عبدالرحمن عبدالله الجساس</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سليمان ناصر سليمان المدعوج</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سليمان بن محمد بن سليمان الهبش</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">سند جودالله حامد البيشي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">شادي احمد مبارك الكعيم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">طارق رضا بشير شمو</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">طارق صنهات بدر العتيبي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">طلال احمد بن عبداللطيف السعيد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">طلال عبدالله بن عبدالكريم الهويمل</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">طلال عبدالله سعد آل ذهبان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">طلال بن عبدالرحمن بن سعد ال بوراس الشهراني</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عادل ماجد عبدالمحسن المحيسن</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن تيسير السعيد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن عبدالعزيز حمد الخليوي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن ضاري بن محمد النزهان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن نوح ناصر القرين</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن بن سعود بن عبدالرحمن الهويشل</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن بن سلطان بن فهد المنصور</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن بن عبدالله بن ناصر التمامي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن بن عبدالعزيز بن عبدالرحمن الحمد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن محمد حسين الكميم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن محمد موسى آل عبدالسلام</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن مساعد عبدالله ال رمان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالرحمن معاويه يوسف بابكر</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالعزيز رشيد بن عبدالرحمن بن سويلم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالعزيز طلال علي ناجي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالعزيز فهد عبدالله آل نوبيت</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالعزيز بن تحسين بن علي العلاوي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالعزيز بن سعود بن عبدالرحمن بن نويشر</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالعزيز بن عصام بن عبدالرحمن الهويدي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالعزيز عبدالرحمن عبدالعزيز بن دحيم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالعزيز عبدالله عبدالعزيز الاحمد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالكريم بن صالح بن محمد العتيبي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله احمد سليمان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله حسين بعجر</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله ظافر بن عبدالله الدوسري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله فيصل راشد الشايقي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله مالك عبدالله علي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله محمد حوتان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله محمد عثمان أبانمي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله مرعي ابراهيم عسيري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله معوض بن مرشد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله وليد محمد عفيف</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله بن احمد بن عتيق بن عجلان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله بن بدر ناصر بن عتيق</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله بن حسن بن علاجي خرمي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله بن راشد بن سليمان البواردي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله بن غازي بن عبدالله الحائك</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالله شبيب بن بطي الدوسري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالمجيد نعيم حسين جاموس</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالمجيد بن محمد بن عبدالله آل عاتي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالمجيد بن محمد بن عبدالعزيز بن عبدالسلام</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالملك فهد عبدالعزيز جميعه</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبدالملك محمد عبدالله القوسي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عبيد نايف خالد العتيبي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عدي سائد شمو</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عزام سعد عبدالله العليوي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عزام محمد سعد العيد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عزام بن مزعل بن فرحان الدوسري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">علي سعد علي القحطاني</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">علي بن احمد بن مروان عفا الرفاعي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">علي بن سعيد بن علي الدوسري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عمر فهد ناصر الدوسري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عمر بن احمد بن عبدالعزيز السيف</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">عمر عبدالعزيز بن عبدالله الحمد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">غراس خالد عبدالله الخثران</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">غسان ناصر علي الكميم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فارس علي ناصر الحوطي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فارس محمد ابراهيم القفيدي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فهد جابر - الوكاع</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فهد زيد فهد الدوسري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فهد سعد فهد القحطاني</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فهد محمد فهد الحسين</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فهد وليد محمد سعيد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فهد عبدالعزيز بن فهد آل سالم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فواز طلال حسين ابراهيم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فيصل ابراهيم عبدالعزيز الجابر</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فيصل راشد عمر الضرغام</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فيصل يوسف علي الشهابي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">فيصل نايف هذال الدوسري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">قصي بن داوود بن يحيى شعف</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">لؤي ناصر ابراهيم حدري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">لقمان مدثر احمد قسم السيد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ماجد رياض حسن عبدالحبيب</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مازن محمد عبدالقادر يسلم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مازن بن عبدالله بن سلطان السبيعي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ماهر خلدون خالد محسن</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مبارك بدر بن مبارك الوهيبي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مبخوت سطام مبخوت الدوسري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">متعب بن علي بن صالح القحطاني</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مترك تركي محمد قيسي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مجد محمد احمد ارجيله</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد احمد محمد العدواني</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد بدر محمد بن سويد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد حليم شاه مراد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد راشد علي الدوسري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد سالم الزين الزين</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد سدر دوغو حسن</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد سعد ابراهيم القحطاني</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد سعيد فلحان العتيبي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد صالح علي محمد جبران</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد عبدالعزيز محمد العجمي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد عبدالعزيز علي العجيري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد عيسى - محمد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد عماد محمد حسن عرفه</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد فهد عبدالله المرعبه</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد لطف راجح المعقب</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد مصطفى سليمان احمد الحسن</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد منصور محمد الثاري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد وائل نواف شلبي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد ياسر محمد المقرن</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد بن سعد بن محمد آل عتيق</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد بن عبدالعزيز بن محمد الحرقان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد بن علي بن سليمان الثنيان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد بن فهد بن محمد العطروزي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">محمد بن وليد بن محمد الحسين</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مشاري حامد عبدالمجيد العتيبي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مشاري عبدالله زيد بن جمعان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مشعل ابراهيم زيد الوبران</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مطلق سالم محمد الفواز</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">معاذ راشد بن محمد آل سالم</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">معاذ بن عمر بن محمد عمر</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">منيف فايز منيف العتيبي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مهند محمد عبدالرحمن الاحمد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">مؤيد بن طلال بن محمد الصنعاوي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ناصر بن ثامر بن ناصر الوراد</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">نايف فهد سالم بقصان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">نايف سعد بن ناصر المنصور</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">نجم الدين فارس يحي مشرح</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">نواف احمد محمد عواجي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">نواف سعيد علي باخلعه</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">نوح بن عبدالرحمن بن صالح المغذوي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">هشام ابراهيم محمد وافي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">هشام بن محمد بن ابراهيم الحمدان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">وليد بن محمد بن احمد معشي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ياسر يحيى حمد مرير</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ياسر بن صالح بن سليمان العقيل</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">ياسر بن محمد بن هادي آل جبران القحطاني</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">يحيى عبدالله صالح عواضي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">يزن بن عبدالعزيز بن سعود بن حميدان</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">يزيد بن ناشي بن ذيب آل مهيزع</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">يوسف ابراهيم صالح المصيرييعي</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">يوسف سالم مبارك الدوسري</span></li>
+            <li class="graduate-card"><span class="icon-cap">🏅</span><span class="graduate-name">يوسف ياسر عبدالرحمن البواردي</span></li>
+        </ul>
+        
+        <a href="index.html" class="back-btn">🛑 العودة للصفحة الرئيسية</a>
+    </div>
+
+    <footer>
+        <p>إعداد الطالب مبارك بدر الوهيبي</p>
+    </footer>
+
+</body>
+</html>
